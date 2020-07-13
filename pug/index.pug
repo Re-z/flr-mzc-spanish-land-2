@@ -34,12 +34,56 @@ block content
 				.steps__item
 					p.steps__item-title Empezar a operar
 					p.steps__item-text Haga su propia historia
+			h2.services__title.title Servicios completamente enriquecidos y acceso al mercado
+			.features
+				mixin featuresRow(text, rightSectionContent)
+					.features__row
+						.features__left
+							p=text
+						.features__right
+							if rightSectionContent
+								span=rightSectionContent
+							else
+								svg.icon-check: use(xlink:href="#check")
+				+featuresRow('Consiga hasta un 50% de bono')
+				+featuresRow('Apalancamiento de hasta', '400')
+				+featuresRow('Protección contra el saldo negativo')
+				+featuresRow('Participe en concursos premium')
+				+featuresRow('Obtenga señales bursátiles de Trading Central por SMS, cómodamente disponibles en cualquier lugar y en cualquier momento')
+				+featuresRow('Gestor de cuenta especializado las 24/5 para ayudarle con cualquier consulta que necesite')
+				+featuresRow('Acceso a seminarios web avanzados y al aprendizaje de nuevas estrategias')
+				+featuresRow('Reciba análisis fundamentales y técnicos diarios para ayudarle a ejecutar sus estrategias bursátiles')
+			.services__btn-wrap
+				a(href="#form").btn Registrarse
 
-				
+	section.candles
+		.inner
+			h2.candles__title.title.title_dark Operaciones bursátiles versátiles para profesionales
+			.candles__box
+				.candles__box-item
+					.candles__box-img
+						svg.icon-search: use(xlink:href="#search")
+					p Conveniente plataforma <br> de negociación de vista móvils
+				.candles__box-item
+					.candles__box-img
+						svg.icon-diagram: use(xlink:href="#diagram")
+					p Acceso gratuito al sitio réplica <br> de Trading Central
+				.candles__box-item
+					.candles__box-img
+						svg.icon-comp: use(xlink:href="#comp")
+					p Acceso gratuito a las señales <br> bursátiles de Trading Central
+
+
+
+
+
+
+
 
 	footer.footer
 	
 		
+
 
 	//svg sprite include
 	.svg-sprite.is-hidden

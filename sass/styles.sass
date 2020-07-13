@@ -19,7 +19,6 @@ $mob: 600
     margin: 0
     padding: 0
     box-sizing: border-box
-    transition: .25s
     &::selection
         background: #ED145B
         color: white
@@ -145,17 +144,88 @@ button
 .services
     background: #060616
     padding-bottom: 150px
+    &__title
+        margin: 150px auto 100px
+        text-align: center
+        max-width: 987px
+    &__btn-wrap
+        text-align: center
+.features
+    margin-bottom: 100px
+    &__row
+        display: grid
+        grid-template-columns: 1fr minmax(100px,187px)
+        border-bottom: 1px solid #434343
+        &:last-of-type
+            border-bottom: none
+    &__left, &__right
+        padding: 24px
+        color: white
+        +graphik
+
+    &__left
+        border-right: 1px solid #434343
+        p
+            font-size: 18px
+    &__right
+        display: grid
+        place-items: center
+        span
+            font-size: 22px
+
+.candles
+    padding: 110px 0 250px 0
+    background: url(../img/candles.png) white center center no-repeat
+    &__title
+        max-width: 832px
+        text-align: center
+        margin: 0 auto
+    &__box
+        margin: 160px 0 190px 0
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+    &__box-item
+        text-align: center
+        p
+            margin: 30px auto 0 auto
+            color: #1B1A22
+            font-size: 18px
+    &__box-img
+        min-height: 96px
+        display: flex
+        justify-content: center
+        align-items: flex-end
 
 
-//generate sprite icons classes
-// $svg-icons: [ 'logo' 240px 40px]
-
-// @each $name, $width, $height in $svg-icons
-//     .icon-#{$name}
-//         width: $width
-//         height: $height
 
 
-.icon-logo
-    width: 240px
-    height: 40px
+
+
+
+
+.title
+    font-size: 48px
+    font-weight: bold
+    color: white
+    line-height: 59px
+    &_dark
+        color: #1B1A22
+.btn
+    background: #ED145B
+    border-radius: 30px
+    color: white
+    padding: 17px 90px
+    font-weight: bold
+    font-size: 24px
+    &:hover
+        background: #00FFDD
+
+
+
+$svg-icons: ['logo' 240px 40px, 'check' 28px 28px, 'search' 82px 86px, 'diagram' 84px 96px, 'comp' 96px 68px ]
+
+
+@each $name, $width, $height in $svg-icons
+    .icon-#{$name}
+        width: $width
+        height: $height
