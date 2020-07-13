@@ -1,0 +1,48 @@
+extends not-compiling/_layout
+
+block title
+	title Index page
+block head
+	meta(name="keywords" content="")
+	meta(name="description" content="")
+
+block content
+	section.intro
+		picture.intro__man-img
+			img(src="img/man.png")
+		.inner
+			header.intro__top
+				svg.icon-logo: use(xlink:href="#logo")
+			.intro__box
+				.intro__left
+					h1.intro__title Operaciones de élite con Monfex
+					p.intro__subtitle Como operador profesional de alta frecuencia, puede beneficiarse de un ecosistema bursátil excepcional. Con estos tres pasos sencillos, ejecute su estrategia bursátil en la robusta Monfex.
+				.intro__right#form
+					h3.intro__form-title Crea una cuenta
+					.form-wrapper
+						.form-block-2.whitee._mnfx-form-container(data-action='https://lp.monfex.com/api/action/AoekF8gYLvQT/register')
+						p.intro__postform Masz już konto <a href="https://trade.monfex.com/sign-in"> Monfex </a>? Proszę się zalogować.
+	section.services
+		.inner
+			.steps
+				.steps__item.is-active
+					p.steps__item-title Registrarsea
+					p.steps__item-text Experiencia impecable
+				.steps__item
+					p.steps__item-title Cuenta del fondo
+					p.steps__item-text Solicite su bono
+				.steps__item
+					p.steps__item-title Empezar a operar
+					p.steps__item-text Haga su propia historia
+
+				
+
+	footer.footer
+	
+		
+
+	//svg sprite include
+	.svg-sprite.is-hidden
+		include ../img/svg-output/svg-sprite.svg
+
+
