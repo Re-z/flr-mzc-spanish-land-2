@@ -59,9 +59,14 @@ button
 
 .intro
     background: url(../img/promo-bg.png) #060616 center center no-repeat
-    min-height: 842px
+    // min-height: 842px
+    padding-bottom: 110px
     position: relative
     z-index: 1
+    +r($desc)
+        padding-bottom: 130px
+    +r($mob)
+        padding-bottom: 90px
     &__man-img
         width: 568px
         height: 824px
@@ -70,46 +75,97 @@ button
         bottom: 0
         transform: translateX(-50%)
         z-index: -1
+        +r($desc)
+            display: none
     &__top
         padding: 60px 0 100px
+        +r($desc)
+            display: flex
+            justify-content: center
+            padding: 50px 80px
+        +r($mob)
+            padding: 40px 60px
     &__box
         display: flex
         justify-content: space-between
+        +r($desc)
+            display: block
     &__left
         max-width: 398px
+        +r($desc)
+            max-width: 100%
+            text-align: center
+            margin-bottom: 40px
     &__right
         max-width: 324px
+        +r($desc)
+            margin: 0 auto
     &__title
         font-weight: bold
         font-size: 60px
         line-height: 72px
         color: white
         margin-bottom: 20px
+        +r($desc)
+            font-size: 55px
+            line-height: 65px
+        +r($tab)
+            font-size: 50px
+            line-height: 60px
+        +r($mob)
+            font-size: 45px
+            line-height: 50px
+            margin-bottom: 40px
     &__subtitle
         color: white
         +graphik
         font-size: 18px
         line-height: 26px
         max-width: 302px
+        +r($desc)
+            max-width: 100%
     &__form-title
         font-size: 36px
         color: white
+    &__postform
+        color: #A4A0A0
+        font-size: 14px
+        +graphik
+        +r($desc)
+            color: white
+        a
+            color: #00FFDD
 
 .steps
     display: grid
     grid-template-columns: repeat(3, 1fr)
     counter-reset: stepsItem
     margin-bottom: 160px
+    +r($desc)
+        // padding-top: 50px
+        display: block
+    +r($tab)
+        margin-bottom: 140px
+    +r($mob)
+        margin-bottom: 100px
     &__item
         color: #BDBDBD
-        padding: 42px 0 37px 0
+        padding: 42px 0 37px 14%
         border: 1px solid #1B1A22
         border-bottom-width: 4px
         counter-increment: stepsItem
-        padding-left: 50px
         position: relative
+        +r($desc)
+            padding: 42px 0 37px 50px
+            max-width: 800px
+            margin: 0 auto 20px auto
+            border-bottom-width: 1px
+        +r($tab)
+            padding: 35px 15px 25px 40px
         &:nth-of-type(even)
             border-right: none
+            +r($desc)
+                border-right: 1px solid #1B1A22
         &:before
             display: inline-block
             content: counter(stepsItem)
@@ -144,48 +200,87 @@ button
 .services
     background: #060616
     padding-bottom: 150px
+    +r($tab)
+        padding-bottom: 120px
+    +r($mob)
+        padding-bottom: 100px
     &__title
         margin: 150px auto 100px
         text-align: center
         max-width: 987px
+        +r($tab)
+            margin: 130px auto 80px
+        +r($mob)
+            margin: 100px auto 70px
+
     &__btn-wrap
         text-align: center
 .features
     margin-bottom: 100px
     &__row
         display: grid
-        grid-template-columns: 1fr minmax(100px,187px)
+        grid-template-columns: 1fr 186px
         border-bottom: 1px solid #434343
+        +r($tab)
+            grid-template-columns: 1fr 120px
+        +r($mob)
+            grid-template-columns: 1fr 80px
+
         &:last-of-type
             border-bottom: none
     &__left, &__right
         padding: 24px
         color: white
         +graphik
+        +r($tab)
+            padding: 18px
+        +r($mob)
+            padding: 13px
 
     &__left
         border-right: 1px solid #434343
         p
             font-size: 18px
+            +r($mob)
+                font-size: 16px
     &__right
         display: grid
         place-items: center
         span
             font-size: 22px
+            +r($mob)
+                font-size: 18px
 
 .candles
     padding: 110px 0 250px 0
     background: url(../img/candles.png) white center center no-repeat
+    +r($desc)
+        padding: 100px 0 230px 0
+    +r($tab)
+        padding: 90px 0 210px 0
+    +r($mob)
+        padding: 70px 0 130px 0 
     &__title
         max-width: 832px
         text-align: center
         margin: 0 auto
     &__box
         margin: 160px 0 190px 0
-        display: grid
-        grid-template-columns: 1fr 1fr 1fr
+        display: flex
+        flex-wrap: wrap
+        +r($desc)
+            margin: 140px 0 160px 0
+        +r($tab)
+            margin: 120px 0 140px 0
+        +r($mob)
+            margin: 80px 0 100px 0
     &__box-item
         text-align: center
+        width: 33.333%
+        +r($tab)
+            width: 100%
+            margin-bottom: 20px
+
         p
             margin: 30px auto 0 auto
             color: #1B1A22
@@ -195,19 +290,80 @@ button
         display: flex
         justify-content: center
         align-items: flex-end
+    &__promo
+        display: flex
+        +r($desc)
+            display: block
+    &__promo-right
+        max-width: 521px
+        +r($desc)
+            max-width: 100%
+            text-align: center
+    &__promo-left
+        display: flex
+        justify-content: center
+        +r($desc)
+            margin-bottom: 40px
+        +r($mob)
+            margin-bottom: 20px
+    &__img
+        position: relative
+        left: -80px
+        max-width: 500px
+        +r($desc)
+            // margin: 0 auto 40px auto
+        +r($tab)
+            left: -60px
+            max-width: 400px
+        +r($mob)
+            left: -40px
+            max-width: 300px
+            // margin-bottom: 20px
+    &__promo-title
+        max-width: 470px
+        +r($desc)
+            max-width: 100%
+    &__promo-subtitle
+        margin: 60px 0
+        font-size: 22px
+        color: #1B1A22
+        +graphik
+    &__btn
+        display: inline-block
 
 
-
-
-
-
-
+.footer
+    text-align: center
+    padding: 45px 0 45px 0
+    background: #060616
+    +r($mob)
+        padding: 30px 0
+    &__logo
+        width: 200px !important
+        height: 33px !important
+    small
+        font-size: 20px
+        color: white
+        display: block
+        margin-top: 30px
+        +r($mob)
+            margin-top: 20px
+            font-size: 18px
 
 .title
     font-size: 48px
     font-weight: bold
     color: white
     line-height: 59px
+    +r($desc)
+        font-size: 45px
+        line-height: 55px
+    +r($tab)
+        font-size: 40px
+        line-height: 50px
+    +r($mob)
+        font-size: 36px
+        line-height: 45px
     &_dark
         color: #1B1A22
 .btn
@@ -217,6 +373,9 @@ button
     padding: 17px 90px
     font-weight: bold
     font-size: 24px
+    +r($mob)
+        padding: 14px 70px
+        font-size: 20px
     &:hover
         background: #00FFDD
 
